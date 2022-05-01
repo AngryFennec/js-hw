@@ -1,0 +1,22 @@
+{
+  "name": "js-hw",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngryFennec/js-hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.27.7"
+   },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  }
+}
