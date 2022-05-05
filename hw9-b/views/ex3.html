@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Asher's Articles/Form Solution</h1>
+<h2>Add new article</h2>
+<form method="post" id="articles" action="/ex3">
+    <label>
+        Title:
+        <input type="text" name="title" id="title">
+    </label>
+    <label class="textarea">
+        Content:
+        <textarea cols="20" rows="3" name="content" id="content"></textarea>
+    </label>
+    <button type="submit">Add</button>
+</form>
+<p id="articles-info"></p> <!-- for information -->
+
+<script src="/ex3.js"></script>
+</body>
+</html>

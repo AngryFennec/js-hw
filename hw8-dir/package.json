@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\""
+    "start": "../node_modules/.bin/browser-sync start --server --no-ui --files \\\"js/**/*.js\\\""
   },
   "repository": {
     "type": "git",
