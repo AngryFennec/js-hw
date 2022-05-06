@@ -3,6 +3,9 @@ const express = require("express");
 
 const multer = require('multer');
 
+// Load the body-parser package as a module
+const bodyParser = require("body-parser");
+
 // Access the main Express object
 const app = express();
 
@@ -12,6 +15,9 @@ app.use(express.static("css"));
 
 const upload = multer();
 
+// Access the JSON parsing service
+const jsonParser = bodyParser.json();
+
 const articles = []; // for ex3
 
 // Return a string for requests to the root URL ("/")
@@ -19,9 +25,29 @@ app.get("/", (request, response) => {
   response.sendFile(`${__dirname}/views/index.html`);
 });
 
-// Return a string for requests to the root URL ("/ex3")
+// Return a string for requests to the url of ex1 ("/ex1")
+app.get("/ex1", (request, response) => {
+  response.sendFile(`${__dirname}/views/ex1.html`);
+});
+
+// Return a string for requests to the url of ex2 ("/ex2")
+app.get("/ex2", (request, response) => {
+  response.sendFile(`${__dirname}/views/ex2.html`);
+});
+
+// Return a string for requests to the url of ex3 ("/ex3")
 app.get("/ex3", (request, response) => {
   response.sendFile(`${__dirname}/views/ex3.html`);
+});
+
+// Handle submission
+app.post("/ex1", upload.array(), (request, response) => {
+  response.send(`${request.body.name}, Thank you for your order. We wiil keep you posted on delivery status at ${request.body.email}`);
+});
+
+// Handle submission
+app.post("/api/countries", jsonParser, (request, response) => {
+  response.send(`Your name is ${request.body.name} and you visited ${request.body.countries.length} countries. Keep travelling!`);
 });
 
 // Handle submission

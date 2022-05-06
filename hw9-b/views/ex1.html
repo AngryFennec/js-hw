@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h2>Asher's Sample Form</h2>
+<form id="form" method="post" action="/ex1">
+    <label>
+        Name:
+        <input type="text" name="name" id="name" required>
+    </label>
+    <label>
+        Email:
+        <input type="email" name="email" id="email" required>
+    </label>
+    <fieldset class="vertical">
+        <legend>Payment type</legend>
+        <label>
+            <input type="radio" id="payment-cash"
+                   name="payment" value="cash">
+            Cash
+        </label>
+        <label>
+            <input type="radio" id="payment-card"
+                   name="payment" value="credit-card">
+            Credit card
+        </label>
+        <label>
+            <input type="radio" id="payment-google"
+                   name="payment" value="google-pay">
+            Google Pay
+        </label>
+        <label>
+            <input type="radio" id="payment-apple"
+                   name="payment" value="apple-pay">
+            Apple Pay
+        </label>
+    </fieldset>
+    <label>
+        <input type="checkbox" id="promotion" name="promotion" value="on">
+        Sign me up for special promotions
+    </label>
+    <label>
+        Preferred Location:
+        <select id="location" name="location">
+            <option value="la">Los Angeles</option>
+            <option value="oc">Orange County</option>
+            <option value="r">Riverside</option>
+        </select>
+    </label>
+    <fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </fieldset>
+</form>
+<p id="form-information"></p>
+<script src="/ex1.js"></script>
+</body>
+</html>

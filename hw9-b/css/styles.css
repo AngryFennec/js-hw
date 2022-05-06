@@ -18,3 +18,24 @@ body {
     margin-top: 20px;
     max-width: 200px;
 }
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
