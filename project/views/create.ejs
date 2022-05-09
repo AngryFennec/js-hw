@@ -1,0 +1,51 @@
+<%- include("_header") -%>
+
+<h1>Sample Form View</h1>
+
+<% if (message === "get") { %>
+    <p>Please enter your information below and submit the form</p>
+<% } else { %>
+    <p>Below is the data you entered</p>
+<% } %>
+
+<form enctype="multipart/form-data" action="/create" method="POST">
+    <p>
+        <label for="id">ID:</label>
+        <input type="number" name="id" id="id" value="<%= data.id %>" required>
+        <span>(equal)</span>
+    </p>
+    <p>
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname" value="<%= data.fname %>" required>
+        <span>(begins with)</span>
+    </p>
+    <p>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="lname" value="<%= data.lname %>" required>
+        <span>(begins with)</span>
+    </p>
+    <p>
+        <label for="state">State:</label>
+        <input type="text" name="state" id="state" value="<%= data.state %>" required>
+        <span>(equal)</span>
+    </p>
+    <p>
+        <label for="sales">Sales YTD:</label>
+        <input type="number" name="sales" id="sales" value="<%= data.sales %>" required>
+        <span>(greater than or equal to)</span>
+    </p>
+    <p>
+        <label for="prev">Sales YTD:</label>
+        <input type="number" name="prev" id="prev" value="<%= data.prev %>" required>
+        <span>(greater than or equal to)</span>
+    </p>
+
+    <button type="submit">Find</button>
+    <button type="reset">Reset</button>
+</form>
+
+<% if (message === "post") { %>
+<!--    <script>document.getElementById("<%= data.payment %>").checked = true;</script>-->
+<% } %>
+
+<%- include("_footer") -%>
